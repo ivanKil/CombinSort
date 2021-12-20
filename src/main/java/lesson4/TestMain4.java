@@ -9,9 +9,32 @@ import java.util.List;
 public class TestMain4 {
 
     public static void main(String[] args) {
-//        testLinkedList();
-        testHomeWork();
-//        testIterator();
+        testSimpleLinkedListImplIterator();
+        SimpleDeque<Integer> deque = new SimpleDeque<>();
+        deque.insertRight(3);
+        deque.insertRight(4);
+        deque.insertRight(15);
+        System.out.println(deque);
+
+        deque.removeLeft();
+        System.out.println(deque);
+
+        deque.insertRight(5);
+        deque.insertRight(8);
+        System.out.println(deque);
+
+        deque.insertLeft(14);
+        deque.insert(100, 5);
+        deque.insert(101, 0);
+        System.out.println(deque);
+
+
+        System.out.println("first=" + deque.first + ", last=" + deque.last);
+        for (Integer i : deque)
+            System.out.print(i + " ");
+        System.out.println();
+        deque.insertLeft(14);
+        System.out.println(deque);
     }
 
     private static void testLinkedList() {
@@ -44,11 +67,17 @@ public class TestMain4 {
 
     }
 
-    private static void testHomeWork() {
+    private static void testSimpleLinkedListImplIterator() {
         //ДОЛЖНО РАБОТАТЬ!
 
         SimpleLinkedListImpl<Integer> linkedList = new SimpleLinkedListImpl<>();
-
+        linkedList.insertFirst(2);
+        linkedList.insertFirst(5);
+        linkedList.insertFirst(3);
+        linkedList.insertFirst(1);
+        linkedList.insertFirst(8);
+        linkedList.insertFirst(4);
+        linkedList.insertFirst(10);
         for (Integer value : linkedList) {
             System.out.println("value: " + value);
         }
